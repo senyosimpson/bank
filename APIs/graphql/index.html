@@ -213,8 +213,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    Best Practices
+  <a href="#tooling" class="md-nav__link">
+    Tooling
   </a>
   
 </li>
@@ -289,8 +289,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    Best Practices
+  <a href="#tooling" class="md-nav__link">
+    Tooling
   </a>
   
 </li>
@@ -327,18 +327,30 @@
 <li>Request data in query which exactly describes your data requirements</li>
 <li>Receive data in a response containing only the you requested</li>
 </ul>
-<p>GraphQL APIs are flexible as they can be layered on top of other services such as REST APIs and databases. This is an additional advantage as it means there is no need for a serious overhaul of the current system. For my current use cases, layering it on top of a REST API is most relevant. This wiki will cover implementing this in Python and Golang.</p>
+<p>GraphQL lives between the client and one or more data sources. It allows for querying these data sources and massaging the data into the format requested by the client. This has many benefits</p>
+<ul>
+<li>Reduces the amount of data returned to the client</li>
+<li>Removes the necessity to massage the data on the client side</li>
+<li>Client can use a single query to get all the data necessarymagine a scenario where you have multiple REST API endpoints. When the client requests certain data, all solves the problem </li>
+</ul>
+<p>GraphQL APIs are flexible as they can be layered on top of other services such as REST APIs and databases. This is an additional advantage as it means there is no need for a serious overhaul of the current system.</p>
 <h2 id="core-tenets">Core Tenets</h2>
 <ul>
 <li>You should receive only the data you need</li>
 <li>Queries have the exact same shape as the result. This makes it unambiguous and the server knows exactly what fields the client is asking for.</li>
 </ul>
-<h2 id="best-practices">Best Practices</h2>
+<h2 id="tooling">Tooling</h2>
+<ol>
+<li><a href="https://www.apollographql.com">Apollo</a> seems to have some of the best tooling for implementing GraphQL. It is JavaScript specific.</li>
+<li><a href="https://www.prisma.io/docs/understand-prisma/prisma-in-your-stack/graphql">Prisma</a> also offers many tools for implementing GrapQL.</li>
+<li><a href="https://graphene-python.org">Graphene</a> makes implementing GraphQL in Python easy. It uses a code-first approach.</li>
+</ol>
 <h2 id="references">References</h2>
 <ol>
 <li><a href="https://graphql.org/learn/">GraphQL official website</a></li>
 <li><a href="https://www.freecodecamp.org/news/so-whats-this-graphql-thing-i-keep-hearing-about-baf4d36c20cf/">So what is this GraphQL thing I keep hearing about?</a></li>
 <li><a href="https://docs.graphene-python.org/en/latest/quickstart/">Graphene</a></li>
+<li><a href="https://www.altexsoft.com/blog/engineering/graphql-core-features-architecture-pros-and-cons/">GraphQL: Core Features, Architecture, Pros and Cons</a></li>
 </ol>
                 
                   
