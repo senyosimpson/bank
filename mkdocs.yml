@@ -1,11 +1,13 @@
 site_name: Knowledge Bank
-docs_dir: 'bank'
-nav:
-  - Overview: overview.md
-  - APIs:
-    - GraphQL: APIs/graphql.md
+docs_dir: bank
+plugins:
+  - mknotebooks
 theme:
   name: material
 markdown_extensions:
   - attr_list
   - codehilite
+nav:
+  - APIs:
+    - GraphQL: APIs/graphql.md
+  - Variational Autoencoder: vae/Variational Autoencoder.ipynb
