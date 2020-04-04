@@ -36,7 +36,7 @@
     
     
       
-        <title>GraphQL - Knowledge Bank</title>
+        <title>Variational Autoencoder - Knowledge Bank</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#graphql" tabindex="0" class="md-skip">
+      <a href="#variational-autoencoder" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                GraphQL
+                Variational Autoencoder
               
             </span>
           
@@ -149,12 +149,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
     
     <label class="md-nav__link" for="nav-1">
       APIs
@@ -170,6 +168,23 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../../APIs/graphql/" title="GraphQL" class="md-nav__link">
+      GraphQL
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -181,11 +196,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        GraphQL
+        Variational Autoencoder
       </label>
     
-    <a href="./" title="GraphQL" class="md-nav__link md-nav__link--active">
-      GraphQL
+    <a href="./" title="Variational Autoencoder" class="md-nav__link md-nav__link--active">
+      Variational Autoencoder
     </a>
     
       
@@ -199,29 +214,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-graphql" class="md-nav__link">
-    What is GraphQL?
+  <a href="#graphical-model-representation" class="md-nav__link">
+    Graphical Model Representation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-tenets" class="md-nav__link">
-    Core Tenets
+  <a href="#jensens-inequality" class="md-nav__link">
+    Jensen's Inequality
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    Best Practices
+  <a href="#kullback-leibler-divergence" class="md-nav__link">
+    Kullback-Leibler Divergence
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
+  <a href="#evidence-lower-bound" class="md-nav__link">
+    Evidence Lower Bound
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variational-autoencoder-in-pytorch" class="md-nav__link">
+    Variational Autoencoder in Pytorch
   </a>
   
 </li>
@@ -234,23 +256,6 @@
   
 </nav>
     
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../vae/Variational%20Autoencoder/" title="Variational Autoencoder" class="md-nav__link">
-      Variational Autoencoder
-    </a>
   </li>
 
     
@@ -275,29 +280,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-graphql" class="md-nav__link">
-    What is GraphQL?
+  <a href="#graphical-model-representation" class="md-nav__link">
+    Graphical Model Representation
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-tenets" class="md-nav__link">
-    Core Tenets
+  <a href="#jensens-inequality" class="md-nav__link">
+    Jensen's Inequality
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    Best Practices
+  <a href="#kullback-leibler-divergence" class="md-nav__link">
+    Kullback-Leibler Divergence
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
+  <a href="#evidence-lower-bound" class="md-nav__link">
+    Evidence Lower Bound
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variational-autoencoder-in-pytorch" class="md-nav__link">
+    Variational Autoencoder in Pytorch
   </a>
   
 </li>
@@ -319,27 +331,87 @@
               
                 
                 
-                <h1 id="graphql">GraphQL</h1>
-<h2 id="what-is-graphql">What is GraphQL?</h2>
-<p>The official GraphQL website describes it as, "a query language for your API and a runtime for fulfilling those queries with your existing data". It is a syntax that describes how to ask for data and returns only the data you need. <a href="https://docs.graphene-python.org/en/latest/quickstart/">Graphene</a> mentions that GraphQL provides a standard way to</p>
-<ul>
-<li>Describe data provided by a server in a statically typed Schema</li>
-<li>Request data in query which exactly describes your data requirements</li>
-<li>Receive data in a response containing only the you requested</li>
-</ul>
-<p>GraphQL APIs are flexible as they can be layered on top of other services such as REST APIs and databases. This is an additional advantage as it means there is no need for a serious overhaul of the current system. For my current use cases, layering it on top of a REST API is most relevant. This wiki will cover implementing this in Python and Golang.</p>
-<h2 id="core-tenets">Core Tenets</h2>
-<ul>
-<li>You should receive only the data you need</li>
-<li>Queries have the exact same shape as the result. This makes it unambiguous and the server knows exactly what fields the client is asking for.</li>
-</ul>
-<h2 id="best-practices">Best Practices</h2>
-<h2 id="references">References</h2>
-<ol>
-<li><a href="https://graphql.org/learn/">GraphQL official website</a></li>
-<li><a href="https://www.freecodecamp.org/news/so-whats-this-graphql-thing-i-keep-hearing-about-baf4d36c20cf/">So what is this GraphQL thing I keep hearing about?</a></li>
-<li><a href="https://docs.graphene-python.org/en/latest/quickstart/">Graphene</a></li>
-</ol>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var scriptElement = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    scriptElement.src = widgetRendererSrc;
+    document.body.appendChild(scriptElement);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+
+<div class="cell border-box-sizing text_cell rendered">
+<p><div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1"></p>
+<h1 id="variational-autoencoder">Variational Autoencoder</h1>
+<p></div>
+</div></p>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<p><div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1"></p>
+<h2 id="graphical-model-representation">Graphical Model Representation</h2>
+<p></div>
+</div></p>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<p><div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1"></p>
+<h2 id="jensens-inequality">Jensen's Inequality</h2>
+<p></div>
+</div></p>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<p><div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1"></p>
+<h2 id="kullback-leibler-divergence">Kullback-Leibler Divergence</h2>
+<p></div>
+</div></p>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<p><div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1"></p>
+<h2 id="evidence-lower-bound">Evidence Lower Bound</h2>
+<p></div>
+</div></p>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<p><div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1"></p>
+<h2 id="variational-autoencoder-in-pytorch">Variational Autoencoder in Pytorch</h2>
+<p></div>
+</div></p>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="codehilite"><pre><span></span><code>
+</code></pre></div>
+
+
+</div>
+
+</div>
                 
                   
                 
@@ -361,20 +433,20 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-        
-          <a href="../../vae/Variational%20Autoencoder/" title="Variational Autoencoder" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../APIs/graphql/" title="GraphQL" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
-                  Next
+                  Previous
                 </span>
-                Variational Autoencoder
+                GraphQL
               </span>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
           </a>
+        
         
       </nav>
     </div>
