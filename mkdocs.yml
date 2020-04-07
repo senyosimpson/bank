@@ -11,3 +11,7 @@ nav:
   - APIs:
     - GraphQL: APIs/graphql.md
   - Variational Autoencoder: vae/Variational Autoencoder.ipynb
+  - Functional Programming:
+    - Clojure:
+      - Clojure for the Brave and True:
+        - Clojure Crash Course: clojure/brave-and-true/clojure-crash-course.md
