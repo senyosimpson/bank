@@ -157,3 +157,91 @@ name
 ; => Daisy
 ```
 
+## Data Structures
+
+All data structures in Clojure are immutable. The common data structures are present - numbers, strings, lists, maps (known as dictionaries in Python), sets and vectors.
+
+#### Numbers
+
+Clojure supports integers, floats and ratios. An example of each
+
+```clojure
+1
+1.4
+1/5
+```
+
+#### Strings
+
+Strings are defined within double quotes in Clojure
+
+```clojure
+"Hello World"
+```
+
+#### Maps (Dictionaries)
+
+Maps map keys to values. An example of a map
+
+```clojure
+{"name" "Daisy"}
+```
+
+To get the value mapped to a key, the `get` function is used
+
+```clojure
+(get {"name" "Daisy"}, "name")
+; => Daisy
+```
+If it doesn't find the key it will return `nil` as the value. You can also set a default as follows
+
+```clojure
+(get {"name" "Daisy"}, "surname" "Wag")
+; => Wag
+```
+
+Similar to other languages, maps can be nested
+
+```clojure
+{"name" {"first" "Daisy" "last" "Wag"}}
+```
+
+To access variables in a nested dictionary, the function `get-in` can be used
+
+```clojure
+(get-in {"name" {"first" "Daisy" "last" "Wag"}} ["name" "first"])
+; => Daisy
+```
+
+#### Keywords
+
+Keywords are primarily used as keys in maps. An example of a map with keywords
+
+```clojure
+{:name "Daisy"}
+```
+
+The same functions apply with keywords
+
+```clojure
+(get {:name "Daisy"} :name)
+; => Daisy
+
+(get-in {:name {:first "Daisy" :last "Wag"}} [:name :first])
+; => Daisy
+```
+
+Keywords can be used as functions to look up the value in a data structure such as a map.
+
+```clojure
+(:name {:name "Daisy"})
+; => Daisy
+```
+Default values can also be provided
+
+```clojure
+(:surname {:name "Daisy"} "Wag")
+; => Wag
+```
+
+#### Vectors
