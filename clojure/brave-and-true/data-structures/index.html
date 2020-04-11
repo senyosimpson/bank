@@ -1,0 +1,1135 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Data Structures - Knowledge Bank</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../css/ansi-colours.css">
+    
+      <link rel="stylesheet" href="../../../css/jupyter-cells.css">
+    
+      <link rel="stylesheet" href="../../../css/pandas-dataframe.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#do-things-a-clojure-crash-course" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Knowledge Bank" aria-label="Knowledge Bank" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Knowledge Bank
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Data Structures
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Knowledge Bank" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Knowledge Bank
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      APIs
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        APIs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../APIs/graphql/" title="GraphQL" class="md-nav__link">
+      GraphQL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../APIs/api/" title="API" class="md-nav__link">
+      API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../APIs/rest/" title="REST" class="md-nav__link">
+      REST
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Machine Learning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Machine Learning
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../machine-learning/vae/Variational%20Autoencoder/" title="Variational Autoencoder" class="md-nav__link">
+      Variational Autoencoder
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Functional Programming
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Functional Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Clojure
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Clojure
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-1" type="checkbox" id="nav-3-1-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1-1">
+      Clojure for the Brave and True
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-1">
+        Clojure for the Brave and True
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Data Structures
+      </label>
+    
+    <a href="./" title="Data Structures" class="md-nav__link md-nav__link--active">
+      Data Structures
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forms" class="md-nav__link">
+    Forms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control Flow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    if
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do" class="md-nav__link">
+    do
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when" class="md-nav__link">
+    when
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean-operators" class="md-nav__link">
+    Boolean Operators
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nil" class="md-nav__link">
+    Nil
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or" class="md-nav__link">
+    Or
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#and" class="md-nav__link">
+    And
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-values-with-def" class="md-nav__link">
+    Naming values with def
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structures" class="md-nav__link">
+    Data Structures
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numbers" class="md-nav__link">
+    Numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    Strings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maps-dictionaries" class="md-nav__link">
+    Maps (Dictionaries)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keywords" class="md-nav__link">
+    Keywords
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vectors" class="md-nav__link">
+    Vectors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    Lists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    Sets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lists-vs-vectors" class="md-nav__link">
+    Lists vs Vectors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorted-sets" class="md-nav__link">
+    Sorted sets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../functions/" title="Functions" class="md-nav__link">
+      Functions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forms" class="md-nav__link">
+    Forms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control Flow
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if" class="md-nav__link">
+    if
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do" class="md-nav__link">
+    do
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when" class="md-nav__link">
+    when
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean-operators" class="md-nav__link">
+    Boolean Operators
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nil" class="md-nav__link">
+    Nil
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#or" class="md-nav__link">
+    Or
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#and" class="md-nav__link">
+    And
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-values-with-def" class="md-nav__link">
+    Naming values with def
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-structures" class="md-nav__link">
+    Data Structures
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numbers" class="md-nav__link">
+    Numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    Strings
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maps-dictionaries" class="md-nav__link">
+    Maps (Dictionaries)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keywords" class="md-nav__link">
+    Keywords
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vectors" class="md-nav__link">
+    Vectors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    Lists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sets" class="md-nav__link">
+    Sets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lists-vs-vectors" class="md-nav__link">
+    Lists vs Vectors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorted-sets" class="md-nav__link">
+    Sorted sets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="do-things-a-clojure-crash-course">Do Things: A Clojure Crash Course</h1>
+<h2 id="syntax">Syntax</h2>
+<h3 id="forms">Forms</h3>
+<p>All Clojure code conforms to a uniform structure. There are two kinds of structures in Clojure</p>
+<ol>
+<li>Literal representations of data structures (numbers, strings, maps, vectors)</li>
+<li>Operations</li>
+</ol>
+<p>All operations take the form</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nf">operator</span> <span class="nv">operand1</span> <span class="nv">operand2</span> <span class="nv">...</span> <span class="nv">operandn</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Some examples</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1">; =&gt; 6</span>
+<span class="p">(</span><span class="nb">str </span><span class="s">&quot;hello&quot;</span> <span class="s">&quot;world&quot;</span><span class="p">)</span>
+<span class="c1">; =&gt; hello world</span>
+</code></pre></div>
+
+
+<h3 id="control-flow">Control Flow</h3>
+<p>The three basic control flow operators in Clojure are <code>if</code>, <code>do</code> and <code>when</code>.</p>
+<h4 id="if">if</h4>
+<p>The general structure of the <code>if</code> statement is as follows</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">if </span><span class="nv">boolean-form</span>
+    <span class="nv">then-form</span>
+    <span class="nv">optional-else-form</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Some examples</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">if </span><span class="nv">true</span>
+    <span class="s">&quot;Hello&quot;</span>
+    <span class="s">&quot;World&quot;</span><span class="p">)</span>
+<span class="c1">; =&gt; Hello</span>
+
+<span class="p">(</span><span class="k">if </span><span class="nv">false</span>
+    <span class="s">&quot;Hello&quot;</span>
+    <span class="s">&quot;World&quot;</span><span class="p">)</span>
+<span class="c1">; =&gt; World</span>
+</code></pre></div>
+
+
+<p>In the first example, it evaluated to true and therefore returned the first value (i.e the value in the true section of the definition). In the second, it evaluated to false and therefore returned the value defined in the <code>optional-else</code> portion of the definition. If you omit the <code>else</code> then it returns <code>nil</code>.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">if </span><span class="nv">false</span>
+    <span class="s">&quot;Hello&quot;</span><span class="p">)</span>
+<span class="c1">; =&gt; nil</span>
+</code></pre></div>
+
+
+<h4 id="do">do</h4>
+<p>The <code>do</code> operator evaluates expressions and returns the value of the last.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nf">do</span>
+    <span class="p">(</span><span class="nb">println </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nv">Hello</span> <span class="nv">World</span>
+<span class="c1">; =&gt; 5</span>
+
+<span class="p">(</span><span class="nf">do</span>
+    <span class="p">(</span><span class="nb">println </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">+ </span><span class="mi">1</span> <span class="mi">1</span><span class="p">))</span>
+<span class="nv">Hello</span> <span class="nv">World</span>
+<span class="c1">; =&gt; 2</span>
+</code></pre></div>
+
+
+<p>From the example, it is clear that only the last value is returned. It executes every statement in the chain however and that is why <code>Hello World</code> is always printed (it's position is irrelevant)</p>
+<h4 id="when">when</h4>
+<p>The <code>when</code> operator is similar to a combination of <code>if</code> and <code>do</code>. It executes every command in the chain if some condition evaluates to true. However, it does not have an <code>else</code> statement and will return <code>nil</code> if the condition is false by default.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">when </span><span class="nv">true</span>
+    <span class="p">(</span><span class="nb">println </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
+<span class="nv">Hello</span> <span class="nv">World</span>
+<span class="c1">; =&gt; 5</span>
+
+<span class="p">(</span><span class="nb">when </span><span class="nv">false</span>
+    <span class="p">(</span><span class="nb">println </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span>
+    <span class="p">(</span><span class="nb">+ </span><span class="mi">2</span> <span class="mi">3</span><span class="p">))</span>
+<span class="c1">; =&gt; nil</span>
+</code></pre></div>
+
+
+<h3 id="boolean-operators">Boolean Operators</h3>
+<h4 id="nil">Nil</h4>
+<p>In Clojure, the none value is <code>nil</code>. You can check if a value is <code>nil</code> with the <code>nil?</code> function</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">nil? </span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">; =&gt; false</span>
+
+<span class="p">(</span><span class="nb">nil? </span><span class="nv">nil</span><span class="p">)</span>
+<span class="c1">; =&gt; true</span>
+</code></pre></div>
+
+
+<h4 id="or">Or</h4>
+<p>The <code>or</code> operator returns either the first truthy value or if none of them evaluate to true, the last value.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">or </span><span class="nv">false</span> <span class="nv">nil</span><span class="p">)</span>
+<span class="c1">; =&gt; nil</span>
+
+<span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nb">= </span><span class="mi">1</span> <span class="mi">1</span><span class="p">))</span>
+<span class="c1">; =&gt; true</span>
+
+<span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nb">= </span><span class="mi">1</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">6</span><span class="p">)</span>
+<span class="c1">; =&gt; 6</span>
+
+<span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nb">= </span><span class="mi">2</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nb">= </span><span class="mi">4</span> <span class="mi">5</span><span class="p">))</span>
+<span class="c1">; =&gt; true</span>
+</code></pre></div>
+
+
+<h4 id="and">And</h4>
+<p>The <code>and</code> operator returns the first falsey value or if no values evaluate to false, the last truthy value.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">and </span><span class="p">(</span><span class="nb">= </span><span class="mi">1</span> <span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="nb">= </span><span class="mi">2</span> <span class="mi">2</span><span class="p">)</span> <span class="mi">10</span><span class="p">)</span>
+<span class="c1">; =&gt; 10</span>
+
+<span class="p">(</span><span class="nb">and </span><span class="p">(</span><span class="nb">= </span><span class="mi">1</span> <span class="mi">2</span><span class="p">)</span> <span class="p">(</span><span class="nb">= </span><span class="mi">1</span> <span class="mi">1</span><span class="p">))</span>
+<span class="c1">; =&gt; false</span>
+
+<span class="p">(</span><span class="nb">and </span><span class="nv">nil</span> <span class="p">(</span><span class="nb">= </span><span class="mi">1</span> <span class="mi">1</span><span class="p">))</span>
+<span class="c1">; =&gt; nil</span>
+</code></pre></div>
+
+
+<h3 id="naming-values-with-def">Naming values with def</h3>
+<p>-- Research the difference between binding &amp; assignment (has to do something with context)</p>
+<p>You can <em>bind</em> names to a value </p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">def </span><span class="nb">name </span><span class="s">&quot;Daisy&quot;</span><span class="p">)</span>
+<span class="nv">name</span>
+<span class="c1">; =&gt; Daisy</span>
+</code></pre></div>
+
+
+<h2 id="data-structures">Data Structures</h2>
+<p>All data structures in Clojure are immutable. The common data structures are present - numbers, strings, lists, maps (known as dictionaries in Python), sets and vectors.</p>
+<h4 id="numbers">Numbers</h4>
+<p>Clojure supports integers, floats and ratios. An example of each</p>
+<div class="codehilite"><pre><span></span><code><span class="mi">1</span>
+<span class="mf">1.4</span>
+<span class="mi">1</span><span class="nv">/5</span>
+</code></pre></div>
+
+
+<h4 id="strings">Strings</h4>
+<p>Strings are defined within double quotes in Clojure</p>
+<div class="codehilite"><pre><span></span><code><span class="s">&quot;Hello World&quot;</span>
+</code></pre></div>
+
+
+<h4 id="maps-dictionaries">Maps (Dictionaries)</h4>
+<p>Maps map keys to values. An example of a map</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="s">&quot;name&quot;</span> <span class="s">&quot;Daisy&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+
+<p>To get the value mapped to a key, the <code>get</code> function is used</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">get </span><span class="p">{</span><span class="s">&quot;name&quot;</span> <span class="s">&quot;Daisy&quot;</span><span class="p">}</span>, <span class="s">&quot;name&quot;</span><span class="p">)</span>
+<span class="c1">; =&gt; Daisy</span>
+</code></pre></div>
+
+
+<p>If it doesn't find the key it will return <code>nil</code> as the value. You can also set a default as follows</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">get </span><span class="p">{</span><span class="s">&quot;name&quot;</span> <span class="s">&quot;Daisy&quot;</span><span class="p">}</span>, <span class="s">&quot;surname&quot;</span> <span class="s">&quot;Wag&quot;</span><span class="p">)</span>
+<span class="c1">; =&gt; Wag</span>
+</code></pre></div>
+
+
+<p>Similar to other languages, maps can be nested</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="s">&quot;name&quot;</span> <span class="p">{</span><span class="s">&quot;first&quot;</span> <span class="s">&quot;Daisy&quot;</span> <span class="s">&quot;last&quot;</span> <span class="s">&quot;Wag&quot;</span><span class="p">}}</span>
+</code></pre></div>
+
+
+<p>To access variables in a nested dictionary, the function <code>get-in</code> can be used</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nf">get-in</span> <span class="p">{</span><span class="s">&quot;name&quot;</span> <span class="p">{</span><span class="s">&quot;first&quot;</span> <span class="s">&quot;Daisy&quot;</span> <span class="s">&quot;last&quot;</span> <span class="s">&quot;Wag&quot;</span><span class="p">}}</span> <span class="p">[</span><span class="s">&quot;name&quot;</span> <span class="s">&quot;first&quot;</span><span class="p">])</span>
+<span class="c1">; =&gt; Daisy</span>
+</code></pre></div>
+
+
+<h4 id="keywords">Keywords</h4>
+<p>Keywords are primarily used as keys in maps. An example of a map with keywords</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="ss">:name</span> <span class="s">&quot;Daisy&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+
+<p>The same functions apply with keywords</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">get </span><span class="p">{</span><span class="ss">:name</span> <span class="s">&quot;Daisy&quot;</span><span class="p">}</span> <span class="ss">:name</span><span class="p">)</span>
+<span class="c1">; =&gt; Daisy</span>
+
+<span class="p">(</span><span class="nf">get-in</span> <span class="p">{</span><span class="ss">:name</span> <span class="p">{</span><span class="ss">:first</span> <span class="s">&quot;Daisy&quot;</span> <span class="ss">:last</span> <span class="s">&quot;Wag&quot;</span><span class="p">}}</span> <span class="p">[</span><span class="ss">:name</span> <span class="ss">:first</span><span class="p">])</span>
+<span class="c1">; =&gt; Daisy</span>
+</code></pre></div>
+
+
+<p>Keywords can be used as functions to look up the value in a data structure such as a map.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="ss">:name</span> <span class="p">{</span><span class="ss">:name</span> <span class="s">&quot;Daisy&quot;</span><span class="p">})</span>
+<span class="c1">; =&gt; Daisy</span>
+</code></pre></div>
+
+
+<p>Default values can also be provided</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="ss">:surname</span> <span class="p">{</span><span class="ss">:name</span> <span class="s">&quot;Daisy&quot;</span><span class="p">}</span> <span class="s">&quot;Wag&quot;</span><span class="p">)</span>
+<span class="c1">; =&gt; Wag</span>
+</code></pre></div>
+
+
+<h4 id="vectors">Vectors</h4>
+<p>Vectors are similar to arrays. You can mix types in lists as well.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">3</span> <span class="s">&quot;hello&quot;</span> <span class="p">{</span><span class="ss">:name</span> <span class="s">&quot;Daisy&quot;</span><span class="p">}]</span>
+</code></pre></div>
+
+
+<p>To get an element at a certain index in a vector we use the <code>get</code> function</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">get </span><span class="p">[</span><span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span><span class="p">]</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1">; =&gt; 3</span>
+</code></pre></div>
+
+
+<p>To add elements to a vector, the <code>conj</code> function is used. This adds elements to the <em>end</em> of the vector</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">conj </span><span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1">; =&gt; [1 2 3 4]</span>
+</code></pre></div>
+
+
+<h4 id="lists">Lists</h4>
+<p>Lists store a collection of values similar to vectors. They are also able to mix types. To instantiate a list</p>
+<div class="codehilite"><pre><span></span><code><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>To retrieve a value from the list, the <code>nth</code> function is used</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">nth </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1">; =&gt; 1</span>
+<span class="p">(</span><span class="nb">nth </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1">; =&gt; 3</span>
+</code></pre></div>
+
+
+<p>Elements can be added to a list using the <code>conj</code> function. However, different to vectors, they add elements to the <em>beginning</em> of a list.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">conj </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">4</span><span class="p">)</span>
+<span class="c1">; =&gt; (4 1 2 3)</span>
+</code></pre></div>
+
+
+<h4 id="sets">Sets</h4>
+<p>Sets are collections of unique values. There are two sets in Clojure, <em>hash sets</em> and <em>sorted sets</em>. They are also able to mix types. The book focuses on hash sets so this is all that is covered here.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">#</span><span class="p">{</span><span class="s">&quot;Daisy&quot;</span> <span class="mi">20</span> <span class="mi">4</span><span class="p">}</span>
+</code></pre></div>
+
+
+<p>Since sets contain unique elements, it enforces this by default. If you try add a value that is already in the set, it will ignore it.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">#</span><span class="p">{</span><span class="mi">1</span> <span class="mi">1</span> <span class="s">&quot;Daisy&quot;</span> <span class="s">&quot;Daisy&quot;</span><span class="p">}</span>
+<span class="c1">; =&gt; #{1 &quot;Daisy&quot;}</span>
+
+<span class="p">(</span><span class="nb">conj </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span> <span class="s">&quot;Daisy&quot;</span><span class="p">}</span> <span class="s">&quot;Daisy&quot;</span><span class="p">)</span>
+<span class="c1">; =&gt; #{1 &quot;Daisy&quot;}</span>
+</code></pre></div>
+
+
+<p>Sets can also be created from lists and vectors using the <code>set</code> function.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">set </span><span class="p">[</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">2</span><span class="p">])</span>
+<span class="c1">; =&gt; #{1 2}</span>
+</code></pre></div>
+
+
+<p>You can check if a value is in the set using the <code>contains?</code> function.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">contains? </span><span class="o">#</span><span class="p">{</span><span class="s">&quot;Daisy&quot;</span> <span class="mi">1</span><span class="p">}</span> <span class="s">&quot;Daisy&quot;</span><span class="p">)</span>
+<span class="c1">; =&gt; true</span>
+
+<span class="p">(</span><span class="nb">contains? </span><span class="o">#</span><span class="p">{</span><span class="s">&quot;Daisy&quot;</span> <span class="mi">1</span><span class="p">}</span> <span class="s">&quot;Flower&quot;</span><span class="p">)</span>
+<span class="c1">; =&gt; true</span>
+</code></pre></div>
+
+
+<h2 id="appendix">Appendix</h2>
+<h3 id="lists-vs-vectors">Lists vs Vectors</h3>
+<h3 id="sorted-sets">Sorted sets</h3>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../../machine-learning/vae/Variational%20Autoencoder/" title="Variational Autoencoder" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Variational Autoencoder
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../functions/" title="Functions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Functions
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
