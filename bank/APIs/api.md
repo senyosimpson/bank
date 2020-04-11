@@ -8,7 +8,7 @@ An Application Programming Interface (API) is an intermediary that allows two ap
 
 A simple analogy for understanding an API is given by How-to-Geek. "Think of an API like a menu in a restaurant. The menu provides a list of dishes you can order, along with a description of each dish. When you specify what menu items you want, the restaurant’s kitchen does the work and provides you with some finished dishes. You don’t know exactly how the restaurant prepares that food, and you don’t really need to."
 
-This summarises how an API is used. As a developer, you have knowledge of what you can request and what those requests return. The logic is hidden in the API and is 'irrelevant' from the user perspective. A great use case on the rise that leverages APIs is open banking by companies such as (Plaid)[https://plaid.com] and [TrueLayer](https://truelayer.com).
+This summarises how an API is used. As a developer, you have knowledge of what you can request and what those requests return. The logic is hidden in the API and is 'irrelevant' from the user perspective. A great use case on the rise that leverages APIs is open banking by companies such as [Plaid](https://plaid.com) and [TrueLayer](https://truelayer.com).
 
 ## References
 

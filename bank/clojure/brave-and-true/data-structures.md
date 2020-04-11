@@ -245,3 +245,89 @@ Default values can also be provided
 ```
 
 #### Vectors
+
+Vectors are similar to arrays. You can mix types in lists as well.
+
+```clojure
+[3 2 1]
+[3 "hello" {:name "Daisy"}]
+```
+
+To get an element at a certain index in a vector we use the `get` function
+
+```clojure
+(get [3 2 1] 0)
+; => 3
+```
+
+To add elements to a vector, the `conj` function is used. This adds elements to the *end* of the vector
+
+```clojure
+(conj [1 2 3] 4)
+; => [1 2 3 4]
+```
+
+#### Lists
+
+Lists store a collection of values similar to vectors. They are also able to mix types. To instantiate a list
+
+```clojure
+'(1 2 3 4)
+```
+
+To retrieve a value from the list, the `nth` function is used
+
+```clojure
+(nth '(1 2 3) 0)
+; => 1
+(nth '(1 2 3) 2)
+; => 3
+```
+
+Elements can be added to a list using the `conj` function. However, different to vectors, they add elements to the *beginning* of a list.
+
+```clojure
+(conj '(1 2 3) 4)
+; => (4 1 2 3)
+```
+
+#### Sets
+
+Sets are collections of unique values. There are two sets in Clojure, *hash sets* and *sorted sets*. They are also able to mix types. The book focuses on hash sets so this is all that is covered here.
+
+```clojure
+#{"Daisy" 20 4}
+```
+
+Since sets contain unique elements, it enforces this by default. If you try add a value that is already in the set, it will ignore it.
+
+```clojure
+#{1 1 "Daisy" "Daisy"}
+; => #{1 "Daisy"}
+
+(conj #{1 "Daisy"} "Daisy")
+; => #{1 "Daisy"}
+```
+
+Sets can also be created from lists and vectors using the `set` function.
+
+```clojure
+(set [1 1 2 2])
+; => #{1 2}
+```
+
+You can check if a value is in the set using the `contains?` function.
+
+```clojure
+(contains? #{"Daisy" 1} "Daisy")
+; => true
+
+(contains? #{"Daisy" 1} "Flower")
+; => true
+```
+
+## Appendix
+
+### Lists vs Vectors
+
+### Sorted sets
