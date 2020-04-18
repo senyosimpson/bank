@@ -7,6 +7,7 @@ theme:
 markdown_extensions:
   - attr_list
   - codehilite
+  - pymdownx.arithmatex
 nav:
   - APIs:
     - GraphQL: APIs/graphql.md
@@ -14,8 +15,12 @@ nav:
     - REST: APIs/rest.md
   - Machine Learning:
     - Variational Autoencoder: machine-learning/vae/Variational Autoencoder.ipynb
+  - Bayesian Statistics:
+    - Bayesian Inference: bayesian-stats/Bayesian Inference.ipynb
   - Functional Programming:
     - Clojure:
       - Clojure for the Brave and True:
+        - Intro: clojure/brave-and-true/intro.md
+        - Control Flow: clojure/brave-and-true/control-flow.md
         - Data Structures: clojure/brave-and-true/data-structures.md
         - Functions: clojure/brave-and-true/functions.md
