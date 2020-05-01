@@ -12,10 +12,12 @@ nav:
     - GraphQL: APIs/graphql.md
     - API: APIs/api.md
     - REST: APIs/rest.md
-  - Machine Learning:
-    - Variational Autoencoder: machine-learning/vae/Variational Autoencoder.ipynb
+  - Networking:
+      - Proxies: networking/proxy.md
+  # - Machine Learning:
+  #   - Variational Autoencoder: machine-learning/vae/Variational Autoencoder.ipynb
   - Functional Programming:
-    - Clojure:
-      - Clojure for the Brave and True:
-        - Data Structures: clojure/brave-and-true/data-structures.md
-        - Functions: clojure/brave-and-true/functions.md
+    - Clojure for the Brave and True:
+      - Intro: clojure/brave-and-true/intro.md
+      - Data Structures: clojure/brave-and-true/data-structures.md
+      - Functions: clojure/brave-and-true/functions.md
