@@ -209,19 +209,17 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      Machine Learning
+      Networking
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        Machine Learning
+        Networking
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -230,77 +228,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Variational Autoencoder
-      </label>
-    
-    <a href="./" title="Variational Autoencoder" class="md-nav__link md-nav__link--active">
-      Variational Autoencoder
+  <li class="md-nav__item">
+    <a href="../../../networking/proxy/" title="Proxies" class="md-nav__link">
+      Proxies
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#graphical-model-representation" class="md-nav__link">
-    Graphical Model Representation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#jensens-inequality" class="md-nav__link">
-    Jensen's Inequality
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kullback-leibler-divergence" class="md-nav__link">
-    Kullback-Leibler Divergence
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#evidence-lower-bound" class="md-nav__link">
-    Evidence Lower Bound
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#variational-autoencoder-in-pytorch" class="md-nav__link">
-    Variational Autoencoder in Pytorch
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -338,33 +270,26 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
     
     <label class="md-nav__link" for="nav-3-1">
-      Clojure
+      Clojure for the Brave and True
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-3-1">
-        Clojure
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-1" type="checkbox" id="nav-3-1-1">
-    
-    <label class="md-nav__link" for="nav-3-1-1">
-      Clojure for the Brave and True
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-1-1">
         Clojure for the Brave and True
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../clojure/brave-and-true/intro/" title="Intro" class="md-nav__link">
+      Intro
+    </a>
+  </li>
+
         
           
           
@@ -387,11 +312,6 @@
     <a href="../../../clojure/brave-and-true/functions/" title="Functions" class="md-nav__link">
       Functions
     </a>
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -572,7 +492,7 @@
 <span class="k">def</span> <span class="nf">vae_loss</span><span class="p">(</span><span class="n">recon_x</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">logvar</span><span class="p">):</span>
     <span class="n">BCE</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">binary_cross_entropy</span><span class="p">(</span><span class="n">recon_x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">784</span><span class="p">),</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">784</span><span class="p">),</span> <span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span>
     <span class="n">KLD</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">logvar</span> <span class="o">-</span> <span class="n">mu</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">logvar</span><span class="o">.</span><span class="n">exp</span><span class="p">())</span>
-    <span class="k">return</span> <span class="n">BCE</span> <span class="o">+</span> <span class="n">KL</span>
+    <span class="k">return</span> <span class="n">BCE</span> <span class="o">+</span> <span class="n">KLD</span>
 </code></pre></div>
 
 
@@ -738,41 +658,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../../../APIs/rest/" title="REST" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                REST
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../../../clojure/brave-and-true/data-structures/" title="Data Structures" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Data Structures
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

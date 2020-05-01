@@ -36,7 +36,7 @@
     
     
       
-        <title>REST - Knowledge Bank</title>
+        <title>Proxies - Knowledge Bank</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#representational-state-transfer" tabindex="0" class="md-skip">
+      <a href="#proxy" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                REST
+                Proxies
               
             </span>
           
@@ -149,12 +149,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
     
     <label class="md-nav__link" for="nav-1">
       APIs
@@ -172,7 +170,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../graphql/" title="GraphQL" class="md-nav__link">
+    <a href="../../APIs/graphql/" title="GraphQL" class="md-nav__link">
       GraphQL
     </a>
   </li>
@@ -184,11 +182,49 @@
 
 
   <li class="md-nav__item">
-    <a href="../api/" title="API" class="md-nav__link">
+    <a href="../../APIs/api/" title="API" class="md-nav__link">
       API
     </a>
   </li>
 
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../APIs/rest/" title="REST" class="md-nav__link">
+      REST
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Networking
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Networking
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -205,11 +241,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        REST
+        Proxies
       </label>
     
-    <a href="./" title="REST" class="md-nav__link md-nav__link--active">
-      REST
+    <a href="./" title="Proxies" class="md-nav__link md-nav__link--active">
+      Proxies
     </a>
     
       
@@ -223,8 +259,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-tenets" class="md-nav__link">
-    Core Tenets
+  <a href="#types-of-proxies" class="md-nav__link">
+    Types of Proxies
   </a>
   
 </li>
@@ -244,42 +280,6 @@
   
 </nav>
     
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
-    
-    <label class="md-nav__link" for="nav-2">
-      Networking
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
-        Networking
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../networking/proxy/" title="Proxies" class="md-nav__link">
-      Proxies
-    </a>
   </li>
 
         
@@ -393,8 +393,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-tenets" class="md-nav__link">
-    Core Tenets
+  <a href="#types-of-proxies" class="md-nav__link">
+    Types of Proxies
   </a>
   
 </li>
@@ -423,28 +423,18 @@
               
                 
                 
-                <h1 id="representational-state-transfer">Representational State Transfer</h1>
-<p>Representational State Transfer (REST) is an <em>architectural style</em> that defines a set of constraints for building web services. It was invented by Roy Fielding in his PhD disseteration. A web service is described as RESTful if it follows the set of constraints. It should not be confused with a protocol. REST does not define what protocol is used to request/receive data or the format of that data, only the set of constraints necessary for a RESTful service.</p>
-<h2 id="core-tenets">Core Tenets</h2>
-<p>REST is defined by 6 core tenets/constraints. They are</p>
-<ol>
-<li>Client-server - The client and the server are independent of each other (decoupled). The client only has knowledge of the requests it can make and where to direct them while the server handles fetching the data and returning the response. This separates the implementation of each component, making it more portable and flexible.</li>
-<li>Stateless - Session state is kept by the client. The request must have enough information to understand the request meaning no stored context (state) is contained by the server.</li>
-<li>Cacheable - Data in a response should be labeled as cacheable or non-cacheable. Caching allows for faster retrievals on consecutive equivalent requests.</li>
-<li>Uniform interface - This constraint contains 4 tents<ol>
-<li>Resource identification in requests - Resources are identified in the request sent to the server</li>
-<li>Resource manipulation through representations - </li>
-<li>Self-descriptive messages - The response sent to the client must contain enough information to describe how to process the information</li>
-<li>Hypermedia as the engine of application state - </li>
-</ol>
-</li>
-<li>Layered system - Additional layers can be added in the client-server system. These layers offer additional features like load-balancing, security, caching etc.</li>
-<li>Code on demand (optional) - The client can extend its functionality by receiving and downloading executable code</li>
-</ol>
+                <h1 id="proxy">Proxy</h1>
+<p>A proxy server is an intermediate server between an end user and the internet. When an end user makes a request to some server, it first flows through the proxy and on return, flows back through the proxy before reaching the end user. This design pattern means a proxy can perform a set of actions before a request is routed to its intended recipient. The most common use cases for proxies are security and network performance. They can act as firewalls, web filters and cache data to speed up requests amongst many other useful features.</p>
+<h2 id="types-of-proxies">Types of Proxies</h2>
+<ul>
+<li><strong>Transparent Proxy</strong> - This proxy informs websites that it is a proxy server and passes along the IP address of the user. It is mostly used for web filtering (for example in schools)</li>
+<li><strong>Anonymous Proxy</strong> - This server identifies itself as a proxy server but does not pass along the IP address of the user.</li>
+<li><strong>Distorting Proxy</strong> - This server also identifies itself as a proxy server but passes along a fake IP address. An example of when this is useful is accessing geo-blocked content. In this case, the IP address appears to originate from a different location.</li>
+<li><strong>High Anonymity Proxy</strong> - This server periodically changes the IP address it presents to the user in order to obfuscate the origination of the request.</li>
+</ul>
 <h2 id="references">References</h2>
 <ol>
-<li><a href="https://www.redhat.com/en/topics/api/what-are-application-programming-interfaces">What is an API? - Red Hat</a></li>
-<li><a href="https://restfulapi.net">What is REST?</a></li>
+<li><a href="https://www.varonis.com/blog/what-is-a-proxy-server/">What is a proxy server?</a></li>
 </ol>
                 
                   
@@ -467,7 +457,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../api/" title="API" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../APIs/rest/" title="REST" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -476,19 +466,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                API
+                REST
               </span>
             </div>
           </a>
         
         
-          <a href="../../networking/proxy/" title="Proxies" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../clojure/brave-and-true/intro/" title="Intro" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Proxies
+                Intro
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

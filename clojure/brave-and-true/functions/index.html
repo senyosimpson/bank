@@ -215,11 +215,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      Machine Learning
+      Networking
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        Machine Learning
+        Networking
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -230,8 +230,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../machine-learning/vae/Variational%20Autoencoder/" title="Variational Autoencoder" class="md-nav__link">
-      Variational Autoencoder
+    <a href="../../../networking/proxy/" title="Proxies" class="md-nav__link">
+      Proxies
     </a>
   </li>
 
@@ -274,35 +274,26 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
     
     <label class="md-nav__link" for="nav-3-1">
-      Clojure
+      Clojure for the Brave and True
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-3-1">
-        Clojure
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-1" type="checkbox" id="nav-3-1-1" checked>
-    
-    <label class="md-nav__link" for="nav-3-1-1">
-      Clojure for the Brave and True
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-1-1">
         Clojure for the Brave and True
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intro/" title="Intro" class="md-nav__link">
+      Intro
+    </a>
+  </li>
+
         
           
           
@@ -362,6 +353,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#anonymous-functions" class="md-nav__link">
+    Anonymous Functions
+  </a>
+  
+</li>
+      
       
       
       
@@ -370,11 +368,6 @@
   
 </nav>
     
-  </li>
-
-        
-      </ul>
-    </nav>
   </li>
 
         
@@ -418,6 +411,13 @@
         <li class="md-nav__item">
   <a href="#destructuring" class="md-nav__link">
     Destructuring
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anonymous-functions" class="md-nav__link">
+    Anonymous Functions
   </a>
   
 </li>
@@ -543,6 +543,40 @@
 
 <span class="p">(</span><span class="nf">printname</span> <span class="p">{</span><span class="ss">:name</span> <span class="s">&quot;Leo&quot;</span> <span class="ss">:surname</span> <span class="s">&quot;Daisy&quot;</span><span class="p">})</span>
 <span class="c1">; =&gt; Leo Daisy</span>
+</code></pre></div>
+
+
+<h2 id="anonymous-functions">Anonymous Functions</h2>
+<p>Anonymous functions are functions without names. The common form of anonymous functions is as follows</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">param</span> <span class="nv">list</span><span class="p">]</span>
+    <span class="nv">function</span> <span class="nv">body</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">name</span><span class="p">]</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">&quot;Hey &quot;</span> <span class="nv">name</span><span class="p">)</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>You can use the above function in such a manner</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">name</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;Hey &quot;</span> <span class="nv">name</span><span class="p">))</span>
+<span class="p">[</span><span class="s">&quot;Daisy&quot;</span>, <span class="s">&quot;Leo&quot;</span><span class="p">])</span>
+
+<span class="c1">; =&gt; (&quot;Hey Daisy&quot;, &quot;Hey Leo&quot;)</span>
+</code></pre></div>
+
+
+<p>The alternate method of declaring anonymous functions is more concise</p>
+<div class="codehilite"><pre><span></span><code><span class="o">#</span><span class="p">(</span><span class="nf">function</span> <span class="nv">%</span> <span class="nv">other</span> <span class="nv">val</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>where <code>%</code> serves as the placeholder for the arguments</p>
+<p>A simple example</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="o">#</span><span class="p">(</span><span class="nb">* </span><span class="nv">%</span> <span class="mi">3</span><span class="p">)</span> <span class="mi">8</span><span class="p">)</span>
+<span class="c1">; =&gt; 24</span>
 </code></pre></div>
                 
                   
