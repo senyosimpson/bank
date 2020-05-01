@@ -117,3 +117,42 @@ Maps can also be deconstructed. There are two ways that are equivalent
 (printname {:name "Leo" :surname "Daisy"})
 ; => Leo Daisy
 ```
+
+## Anonymous Functions
+
+Anonymous functions are functions without names. The common form of anonymous functions is as follows
+
+```clojure
+(fn [param list]
+    function body
+)
+```
+
+```clojure
+(fn [name]
+    (str "Hey " name)
+)
+```
+
+You can use the above function in such a manner
+
+```clojure
+(map (fn [name] (str "Hey " name))
+["Daisy", "Leo"])
+
+; => ("Hey Daisy", "Hey Leo")
+```
+
+The alternate method of declaring anonymous functions is more concise
+
+```clojure
+#(function % other val)
+```
+where `%` serves as the placeholder for the arguments
+
+A simple example
+
+```clojure
+(#(* % 3) 8)
+; => 24
+```

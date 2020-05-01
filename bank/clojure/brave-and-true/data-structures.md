@@ -1,4 +1,4 @@
-# Data Structures
+# Data Structures in Clojure
 
 All data structures in Clojure are immutable. The common data structures are present - numbers, strings, lists, maps (known as dictionaries in Python), sets and vectors.
 

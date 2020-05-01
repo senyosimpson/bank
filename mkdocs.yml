@@ -7,6 +7,7 @@ theme:
 markdown_extensions:
   - attr_list
   - codehilite
+  - pymdownx.arithmatex
 nav:
   - APIs:
     - GraphQL: APIs/graphql.md
