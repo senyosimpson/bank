@@ -18,6 +18,7 @@ nav:
   # - Machine Learning:
   #   - Variational Autoencoder: machine-learning/vae/Variational Autoencoder.ipynb
   - Functional Programming:
+    - Core Tenets: functional-programming/func-programming.md
     - Clojure for the Brave and True:
       - Intro: clojure/brave-and-true/intro.md
       - Data Structures: clojure/brave-and-true/data-structures.md
