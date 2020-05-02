@@ -1,0 +1,244 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+(function() {
+  function addWidgetsRenderer() {
+    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
+    var scriptElement = document.createElement('script');
+    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
+    var widgetState;
+
+    // Fallback for older version:
+    try {
+      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
+
+      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
+        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
+      }
+    } catch(e) {}
+
+    scriptElement.src = widgetRendererSrc;
+    document.body.appendChild(scriptElement);
+  }
+
+  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
+}());
+</script>
+
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+# Variational Autoencoder
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+## Graphical Model Representation
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+## Jensen's Inequality
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+## Kullback-Leibler Divergence
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+## Evidence Lower Bound
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered" markdown="1">
+<div class="inner_cell" markdown="1">
+<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
+## Variational Autoencoder in Pytorch
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+import logging
+import torch
+import torch.nn as nn
+import torch.optim as optim
+import torch.nn.functional as F
+from torch.utils.data import DataLoader
+from torchvision.utils import save_image
+from torchvision import datasets, transforms
+```
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+# Reconstruction + KL divergence losses summed over all elements and batch
+def vae_loss(recon_x, x, mu, logvar):
+    BCE = F.binary_cross_entropy(recon_x.view(-1, 784), x.view(-1, 784), reduction='sum')
+    KLD = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp())
+    return BCE + KLD
+```
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+class SubPixelConv2d(nn.Module):
+    def __init__(self, input_channels, output_channels, bias=False, upscale_factor=2, use_relu=True):
+        super().__init__()
+        self.conv = nn.Conv2d(input_channels, output_channels, kernel_size=3, stride=1, padding=1, bias=bias)
+        self.pixel_shuffle = nn.PixelShuffle(upscale_factor)
+        self.relu = nn.ReLU()
+        self.use_relu = use_relu
+
+    def forward(self, x):
+        x = self.conv(x)
+        x = self.pixel_shuffle(x)
+        if self.use_relu:
+            x = self.relu(x)
+        return x
+
+
+class VAE(nn.Module):
+    def __init__(self):
+        super().__init__()
+        
+        # encoder layers
+        self.conv1 = nn.Conv2d(1, 8, kernel_size=3, stride=2, padding=1)
+        self.conv2 = nn.Conv2d(8, 16, kernel_size=3, stride=2, padding=1)
+        self.fc1 = nn.Linear(784, 256)
+        self.mu_layer = nn.Linear(256, 20)
+        self.log_sigma_layer = nn.Linear(256, 20)
+        
+        # decoder layers
+        self.fc2 = nn.Linear(20, 256)
+        self.fc3 = nn.Linear(256, 784)
+        self.subconv1 = SubPixelConv2d(16, 32)
+        self.subconv2 = SubPixelConv2d(8, 4, use_relu=False)
+        
+    def encoder(self, x):
+        x = F.relu(self.conv1(x))
+        x = F.relu(self.conv2(x))
+        x = x.view(x.size(0), -1)
+        x = F.relu(self.fc1(x))
+        mu = self.mu_layer(x)
+        logvar = self.log_sigma_layer(x)
+        return mu, logvar
+    
+    def reparameterize(self, mu, logvar):
+        sigma = torch.exp(0.5 * logvar)
+        z = mu + sigma * torch.randn_like(sigma)
+        return z
+        
+    def decoder(self, z):
+        x = F.relu(self.fc2(z))
+        x = F.relu(self.fc3(x))
+        x = x.view(x.size(0), 16, 7, 7)
+        x = self.subconv1(x)
+        x = self.subconv2(x)
+        x = torch.sigmoid(x)
+        return x
+    
+    def forward(self, x):
+        mu, logvar = self.encoder(x)
+        z = self.reparameterize(mu, logvar)
+        out = self.decoder(z)
+        return out, mu, logvar
+```
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+logger = logging.getLogger('vae')
+logger.setLevel(logging.INFO)
+handler = logging.StreamHandler()
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+if len(logger.handlers) == 0:
+    logger.addHandler(handler)
+```
+
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered" markdown="1">
+<div class="input">
+
+```python
+epochs = 10
+batch_size = 64
+lr = 1e-3
+seed = 42
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+if seed:
+    torch.manual_seed(seed)
+
+vae = VAE().to(device)
+optimizer = optim.Adam(vae.parameters(), lr=lr)
+
+transform = transforms.Compose([
+    transforms.ToTensor()
+])
+mnist = datasets.MNIST('../../pytorch-datasets', train=True, transform=transform)
+train_loader = DataLoader(mnist, batch_size=batch_size, num_workers=2, shuffle=True)
+
+# train
+logger.info('')
+logger.info('Batch Size : %d' % batch_size)
+logger.info('Number of Epochs : %d' % epochs)
+logger.info('Steps per Epoch : %d' % len(train_loader))
+logger.info('')
+
+for epoch in range(epochs):
+    vae.train()
+    mean_loss = 0
+    logger.info('============== Epoch %d/%d ==============' % (epoch + 1, epochs))
+    for step, (images, _) in enumerate(train_loader):
+        images = images.to(device)
+        recons, mu, logvar = vae(images)
+        optimizer.zero_grad()
+        loss = vae_loss(recons, images, mu, logvar)
+        loss.backward()
+        optimizer.step()
+
+        if step % 10 == 0:
+            logger.info('step: %d, loss: %.5f' % (step, loss.item()))
+        mean_loss += loss.item()
+
+    logger.info('epoch : %d, average loss : %.5f' % (epoch + 1, mean_loss / len(train_loader.dataset)))
+
+    vae.eval()
+    with torch.no_grad():
+        sample = torch.randn(64, 20).to(device)
+        sample = vae.decoder(sample).cpu()
+        save_image(sample, 'results/sample_{}.png'.format(epoch))
+```
+
+</div>
+
+</div>
+
+
