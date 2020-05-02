@@ -23,3 +23,5 @@ nav:
       - Intro: clojure/brave-and-true/intro.md
       - Data Structures: clojure/brave-and-true/data-structures.md
       - Functions: clojure/brave-and-true/functions.md
+  - Object-oriented Programming:
+    - Core Tenets: oop/oop.md
