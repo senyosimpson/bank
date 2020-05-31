@@ -323,8 +323,36 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#function-composition" class="md-nav__link">
+    Function Composition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-class-functions" class="md-nav__link">
+    First-class Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referential-transparency" class="md-nav__link">
+    Referential Transparency
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
   
 </li>
       
@@ -489,8 +517,36 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#function-composition" class="md-nav__link">
+    Function Composition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-class-functions" class="md-nav__link">
+    First-class Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#referential-transparency" class="md-nav__link">
+    Referential Transparency
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
   
 </li>
       
@@ -540,7 +596,7 @@
 </code></pre></div>
 
 
-<p>This example, while ridiculous, adequately highlights a side effect. When adding the numbers, a database is updated with a value of that number. This is a side effect and the outcome of the function every time it is executed is actually different considering it is adding data to a database. The reason that this can be difficult to reason about is that the function gives no indication such an effect would occur.</p>
+<p>This example, while simple, adequately highlights a side effect. When adding the numbers, a database is updated with a value of that number. This is a side effect and the outcome of the function every time it is executed is actually different considering it is adding data to a database. The reason that this can be difficult to reason about is that the function gives no indication such an effect would occur.</p>
 <h3 id="immutability">Immutability</h3>
 <p>Functional programming relies heavily on immutability. This means once declared, structures cannot be modified. For example in the object-oriented paradigm, you can do</p>
 <div class="codehilite"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
@@ -549,6 +605,84 @@
 
 
 <p>This is not possible in functional programming. In functional programming we can create a <em>new</em> variable but we can't update an already instantiated variable. This, again, brings the benefit of making it easier to reason about code and understand the flow of data through a program. </p>
+<h3 id="function-composition">Function Composition</h3>
+<p>Function composition is the act of combining multiple (simple) functions to build more complex functions. Since functions are at the center of functional programming, as well as a focus on purity and mitigating side effects, it lends itself to the creating multiple small functions which are then combined into bigger functions. Looking at a trivial example - suppose we take the mean of a set of integers. We can consider this the result of two functions, one is to add all the elements and the other is to count how many elements there are. Using the two functions,  we can easily compute the mean. For the sake of verbosity, the functions are custom defined.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">+=</span> <span class="n">n</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">add</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">/</span> <span class="n">count</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>This is function composition at work. We have combined the functions <code>add</code> and <code>count</code> to create another function <code>mean</code>.</p>
+<h3 id="first-class-functions">First-class Functions</h3>
+<p>In simple terms, first-class functions are functions that are treated as variables. This means they can be passed into other functions as arguments, be returned from functions and be saved in variables. First-class functions allow developers to create higher-level with abstractions with functions alone and enables function composition. A simple example once again using the mean. Suppose we want to calculate the mean using one of three mean functions: harmonic mean, arithmetic mean or geometric mean. Using first-class functions we could do it in this way</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">arithmetic_mean</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">harmonic_mean</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">geometric_mean</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">mean_fn</span><span class="p">,</span> <span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">mean_fn</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+
+<span class="c1"># using harmonic mean</span>
+<span class="n">mean</span><span class="p">(</span><span class="n">harmonic_mean</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+
+<span class="c1"># we can also assign the fn a variable and use</span>
+<span class="n">g_mean</span> <span class="o">=</span> <span class="n">geometric_mean</span>
+<span class="n">mean</span><span class="p">(</span><span class="n">g_mean</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span> 
+</code></pre></div>
+
+
+<p>Here, the mean function is passed into <code>mean</code> which actually does the calculation. In the second example, the function <code>geometric_mean</code> is assigned to a variable <code>g_mean</code> and that is passed into the function. This highlights some attributes of first-class functions.</p>
+<h3 id="referential-transparency">Referential Transparency</h3>
+<p>Referential transparency is when a function can be replaced with the value it returns without changing the program's behaviour. This is dependent on the fact that functions are <em>pure</em>. Breaking function purity breaks referential transparency. The main advantages it brings are that it makes code easier to reason about, test, refactor and optimize. A simple example of a referentially transparent function is an addition function</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre></div>
+
+
+<p>We can replace that function with its return value and the calling program will still function the same.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">8</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sum function works&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error in sum function&#39;</span><span class="p">)</span>
+
+<span class="c1"># prints: sum functions works</span>
+</code></pre></div>
+
+
+<p>It is clear that if we replace <code>a</code> with <code>4</code>, the program would work the same, printing <code>sum function works</code>. Now image we defined the <code>add</code> functions as </p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Adding </span><span class="si">{a}</span><span class="s1"> and </span><span class="si">{b}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</code></pre></div>
+
+
+<p>In this case, the program would first print <code>Adding 2 and 2</code> and then <code>sum function works</code>. If we replaced <code>a</code> with <code>4</code>, we would not get the first message. This has altered the program and therefore it is not referentially transparent.</p>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://lispcast.com/what-are-first-class-functions/">What are first-class functions</a></li>
+<li><a href="https://sookocheff.com/post/fp/why-functional-programming/">Why functional programming</a></li>
+<li><a href="https://thecodeboss.dev/2016/12/core-functional-programming-concepts/">Core functional programming concepts</a></li>
+<li><a href="https://www.freecodecamp.org/news/an-introduction-to-the-basic-principles-of-functional-programming-a2c2a15c84/">An introduction to the basic principles of functional programming</a></li>
+</ol>
                 
                   
                 
