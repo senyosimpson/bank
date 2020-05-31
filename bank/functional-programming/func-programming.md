@@ -35,7 +35,7 @@ def add_numbers(a, b):
     update_database(num)    
     return num
 ```
-This example, while ridiculous, adequately highlights a side effect. When adding the numbers, a database is updated with a value of that number. This is a side effect and the outcome of the function every time it is executed is actually different considering it is adding data to a database. The reason that this can be difficult to reason about is that the function gives no indication such an effect would occur.
+This example, while simple, adequately highlights a side effect. When adding the numbers, a database is updated with a value of that number. This is a side effect and the outcome of the function every time it is executed is actually different considering it is adding data to a database. The reason that this can be difficult to reason about is that the function gives no indication such an effect would occur.
 
 
 ### Immutability
@@ -47,3 +47,90 @@ x = 1
 x = x + 1
 ```
 This is not possible in functional programming. In functional programming we can create a *new* variable but we can't update an already instantiated variable. This, again, brings the benefit of making it easier to reason about code and understand the flow of data through a program. 
+
+
+### Function Composition
+
+Function composition is the act of combining multiple (simple) functions to build more complex functions. Since functions are at the center of functional programming, as well as a focus on purity and mitigating side effects, it lends itself to the creating multiple small functions which are then combined into bigger functions. Looking at a trivial example - suppose we take the mean of a set of integers. We can consider this the result of two functions, one is to add all the elements and the other is to count how many elements there are. Using the two functions,  we can easily compute the mean. For the sake of verbosity, the functions are custom defined.
+
+```python
+def add(numbers):
+    out = 0
+    for n in numbers:
+        out += n
+    return out
+
+def count(numbers):
+    out = 0
+    for _ in numbers:
+        out += 1
+    return out
+
+def mean(numbers):
+    return add(numbers) / count(numbers)
+```
+
+This is function composition at work. We have combined the functions `add` and `count` to create another function `mean`.
+
+
+### First-class Functions
+
+In simple terms, first-class functions are functions that are treated as variables. This means they can be passed into other functions as arguments, be returned from functions and be saved in variables. First-class functions allow developers to create higher-level with abstractions with functions alone and enables function composition. A simple example once again using the mean. Suppose we want to calculate the mean using one of three mean functions: harmonic mean, arithmetic mean or geometric mean. Using first-class functions we could do it in this way
+
+```python
+def arithmetic_mean(numbers):
+    pass
+
+def harmonic_mean(numbers):
+    pass
+
+def geometric_mean(numbers):
+    pass
+
+def mean(mean_fn, numbers):
+    return mean_fn(numbers)
+
+# using harmonic mean
+mean(harmonic_mean, numbers)
+
+# we can also assign the fn a variable and use
+g_mean = geometric_mean
+mean(g_mean, numbers) 
+```
+Here, the mean function is passed into `mean` which actually does the calculation. In the second example, the function `geometric_mean` is assigned to a variable `g_mean` and that is passed into the function. This highlights some attributes of first-class functions.
+
+### Referential Transparency
+
+Referential transparency is when a function can be replaced with the value it returns without changing the program's behaviour. This is dependent on the fact that functions are *pure*. Breaking function purity breaks referential transparency. The main advantages it brings are that it makes code easier to reason about, test, refactor and optimize. A simple example of a referentially transparent function is an addition function
+
+```python
+def add(a, b):
+    return a + b
+```
+We can replace that function with its return value and the calling program will still function the same.
+
+```python
+a = add(2, 2)
+b = add(a, a)
+if b == 8:
+    print('Sum function works')
+else:
+    print('Error in sum function')
+
+# prints: sum functions works
+```
+It is clear that if we replace `a` with `4`, the program would work the same, printing `sum function works`. Now imagine we defined the `add` functions as 
+
+```python
+def add(a, b):
+    print(f'Adding {a} and {b}')
+    return a + b
+```
+In this case, the program would first print `Adding 2 and 2` and then `sum function works`. If we replaced `a` with `4`, we would not get the first message. This has altered the program and therefore it is not referentially transparent.
+
+## References
+
+1. [What are first-class functions](https://lispcast.com/what-are-first-class-functions/)
+2. [Why functional programming](https://sookocheff.com/post/fp/why-functional-programming/)
+3. [Core functional programming concepts](https://thecodeboss.dev/2016/12/core-functional-programming-concepts/)
+4. [An introduction to the basic principles of functional programming](https://www.freecodecamp.org/news/an-introduction-to-the-basic-principles-of-functional-programming-a2c2a15c84/)
