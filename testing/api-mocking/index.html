@@ -512,7 +512,7 @@
 <h2 id="mocking-best-practices">Mocking Best Practices</h2>
 <p>These best practices are from reference 2.</p>
 <ul>
-<li>Make the mock 100% technically equivalent - A mock should support the same transport protocols, schemas, etc as the actual API, and be. The mock API should be accessible exactly like the original service and not require any special tooling or libraries.</li>
+<li>Make the mock 100% technically equivalent - A mock should support the same transport protocols, schemas, etc as the actual API. The mock API should be accessible exactly like the original service and not require any special tooling or libraries.</li>
 <li>Use recording tools or log files to create complex mock behavior - For cases when you are uncertain about messages to return, record them with a proxy or packet-sniffer and then use those recordings to create the mock behavior.</li>
 <li>Use mocks to create negative tests - Simulate unexpected errors, long response times or even invalid messages to make sure your API client handles those gracefully.</li>
 <li>Use mocks to enable continuous testing - of your components; by mocking out external dependencies and APIs you can run your tests as often as you want without affecting those dependencies and without being affected by any unexpected changes or irregularities within them.</li>
