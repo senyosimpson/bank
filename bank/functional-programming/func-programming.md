@@ -40,7 +40,7 @@ This example, while simple, adequately highlights a side effect. When adding the
 
 ### Immutability
 
-Functional programming relies heavily on immutability. This means once declared, structures cannot be modified. For example in the object-oriented paradigm, you can do
+Functional programming relies heavily on immutability. This means once declared, structures cannot be modified. For example a mutable language, you can do
 
 ```python
 x = 1
