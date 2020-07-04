@@ -36,7 +36,7 @@
     
     
       
-        <title>Bayesian Inference - Knowledge Bank</title>
+        <title>API Mock Testing - Knowledge Bank</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#bayesian-inference" tabindex="0" class="md-skip">
+      <a href="#api-mock-testing" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Bayesian Inference
+                API Mock Testing
               
             </span>
           
@@ -245,10 +245,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
     <label class="md-nav__link" for="nav-3">
       Testing
@@ -264,11 +266,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../testing/api-mocking/" title="API Mock Testing" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        API Mock Testing
+      </label>
+    
+    <a href="./" title="API Mock Testing" class="md-nav__link md-nav__link--active">
       API Mock Testing
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mocking-best-practices" class="md-nav__link">
+    Mocking Best Practices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -430,8 +477,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#mocking-best-practices" class="md-nav__link">
+    Mocking Best Practices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
   </a>
   
 </li>
@@ -453,91 +507,22 @@
               
                 
                 
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-<script>
-(function() {
-  function addWidgetsRenderer() {
-    var mimeElement = document.querySelector('script[type="application/vnd.jupyter.widget-view+json"]');
-    var scriptElement = document.createElement('script');
-    var widgetRendererSrc = 'https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js';
-    var widgetState;
-
-    // Fallback for older version:
-    try {
-      widgetState = mimeElement && JSON.parse(mimeElement.innerHTML);
-
-      if (widgetState && (widgetState.version_major < 2 || !widgetState.version_major)) {
-        widgetRendererSrc = 'jupyter-js-widgets@*/dist/embed.js';
-      }
-    } catch(e) {}
-
-    scriptElement.src = widgetRendererSrc;
-    document.body.appendChild(scriptElement);
-  }
-
-  document.addEventListener('DOMContentLoaded', addWidgetsRenderer);
-}());
-</script>
-
-<div class="cell border-box-sizing text_cell rendered">
-<p><div class="inner_cell" markdown="1">
-<div class="text_cell_render border-box-sizing rendered_html" markdown="1"></p>
-<h1 id="bayesian-inference">Bayesian Inference</h1>
-<p></div>
-</div></p>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<p><div class="inner_cell" markdown="1">
-<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-Bayesian statistics uses probability distributions to quantify degrees of belief. Bayesian inference provides the mathematical formalism and machinery to incorporate prior beliefs into our models and update them based on new evidence. The prior distribution encodes the degree of belief of a parameter or set of parameters before they are seen. On observation of new data, the priors are updated to form the posterior.</p>
-<p>This is akin to how humans think and process information. Imagine you are estimating the amount of time it takes for you to travel from home to work. The first time, you make a guess based on some assumptions you have, for instance the distance and amount of traffic. After driving to work the first time, you have evidence of how long it actually takes. After doing this day in and day out, you become more <em>certain</em>. This is basically Bayesian inference. Initially, we make an estimate (our prior belief) which encodes how certain we are about some phenomena (i.e the time it takes to drive to work). After seeing increasingly more data, we become more certain and update our belief (the posterior belief).</p>
-<p>Bayes formula is central to Bayesian inference (hence the not so obvious name!). Bayes formula is given by</p>
-<p><span><span class="MathJax_Preview">p(\theta | D) = \frac{p(D|\theta) p(\theta)}{p(D)}</span><script type="math/tex">p(\theta | D) = \frac{p(D|\theta) p(\theta)}{p(D)}</script></span></p>
-<p>which in English terms is</p>
-<p><span><span class="MathJax_Preview">\text{posterior = } \frac{\text{prior } \times \text{ likelihood}}{\text{evidence}}</span><script type="math/tex">\text{posterior = } \frac{\text{prior } \times \text{ likelihood}}{\text{evidence}}</script></span></p>
-<p>The evidence serves to normalize the density to give you a distribution. Often we can ignore it and write the above as</p>
-<p><span><span class="MathJax_Preview">p(\theta | D) \propto p(D|\theta) p(\theta)</span><script type="math/tex">p(\theta | D) \propto p(D|\theta) p(\theta)</script></span></p>
-<p><span><span class="MathJax_Preview">\text{posterior} \propto \text{prior } \times \text{ likelihood}</span><script type="math/tex">\text{posterior} \propto \text{prior } \times \text{ likelihood}</script></span></p>
-<p>We walk through a concrete example of Bayesian inference to solidify the concept</p>
-</div>
-</div>
-
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<p><div class="inner_cell" markdown="1">
-<div class="text_cell_render border-box-sizing rendered_html" markdown="1"></p>
-<h2 id="example">Example</h2>
-<p>This example is motivated by this <a href="https://medium.com/paper-club/analytical-bayesian-inference-with-conjugate-priors-4a1d75ca799b">blog post</a>
-</div>
-</div></p>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<p><div class="inner_cell" markdown="1">
-<div class="text_cell_render border-box-sizing rendered_html" markdown="1">
-You are an up and coming musician. You are releasing a new album tomorrow and you want to estimate how many streams you'll get on the first day of release.</p>
-<p>The relevant distribution in this case is a Poisson distribution. A Poisson distribution is a discrete distribution that shows how many times an event is likely to occur in a specified period of time. An assumption is that the event occur at a constant rate within a given interval of time and that they are independent. The probability mass function is given by the formula</p>
-<p><span><span class="MathJax_Preview">P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}</span><script type="math/tex">P(X = k) = \frac{\lambda^k e^{-\lambda}}{k!}</script></span></p>
-<p>The only parameter for this distribution is $ \lambda $. We choose a prior over this parameter. To make it analytical, we use the conjugate prior of the Poisson distribution, the gamma distribution. The probability density function is given by</p>
-<p><span><span class="MathJax_Preview">\frac{\beta^\alpha x^{\alpha-1}e^{-\beta x}}{\Gamma(\alpha)}</span><script type="math/tex">\frac{\beta^\alpha x^{\alpha-1}e^{-\beta x}}{\Gamma(\alpha)}</script></span></p>
-<p>where <span><span class="MathJax_Preview">\Gamma(\alpha)</span><script type="math/tex">\Gamma(\alpha)</script></span> is the gamma function given by</p>
-<p><span><span class="MathJax_Preview">\Gamma(\alpha) = \int^\infty_0 x^{\alpha-1}e^{-x} dx</span><script type="math/tex">\Gamma(\alpha) = \int^\infty_0 x^{\alpha-1}e^{-x} dx</script></span>
-</div>
-</div></p>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="codehilite"><pre><span></span><code>
-</code></pre></div>
-
-
-</div>
-
-</div>
+                <h1 id="api-mock-testing">API Mock Testing</h1>
+<p>API mock testing is the use of a mock API server when testing code. A mock server is a server that imitates a live server. It will accept requests and return responses with simulated data. Mock servers can be grouped into static and dynamic servers. Static servers return the same data for each endpoint. This is advantageous as it is simple to use and deterministic - a great use case for testing. The disadvantage is that real servers return different data depending on the input and that data changes over time. Enter, dynamic servers. These return randomly generated data depending on their input. This makes it useful for covering the entire test space. Mock servers are most useful in two use cases. If you're developing a new application and the backend has not been fully developed, a mock server is used to imitate the actual server. This allows frontend components to be built even without a fully operational backend. The other use case is during testing. When testing code, you may need to call an API. Oftentimes, we don't actually want to call a live API. Some reasons include avoiding calls that modify the data, the data returned from the API is dynamic or avoiding make an unnecessary amount of calls to it.</p>
+<h2 id="mocking-best-practices">Mocking Best Practices</h2>
+<p>These best practices are from reference 2.</p>
+<ul>
+<li>Make the mock 100% technically equivalent - A mock should support the same transport protocols, schemas, etc as the actual API, and be. The mock API should be accessible exactly like the original service and not require any special tooling or libraries.</li>
+<li>Use recording tools or log files to create complex mock behavior - For cases when you are uncertain about messages to return, record them with a proxy or packet-sniffer and then use those recordings to create the mock behavior.</li>
+<li>Use mocks to create negative tests - Simulate unexpected errors, long response times or even invalid messages to make sure your API client handles those gracefully.</li>
+<li>Use mocks to enable continuous testing - of your components; by mocking out external dependencies and APIs you can run your tests as often as you want without affecting those dependencies and without being affected by any unexpected changes or irregularities within them.</li>
+<li>Create your mock so that it can forward requests - If you are using mocking for enabling development, being able to to the actual API as it becomes available for certain operations allows you to partially replace mocked operations / behavior with its real counterpart as required by your scenario.</li>
+</ul>
+<h2 id="references">References</h2>
+<ol>
+<li><a href="https://stoplight.io/mock-api-guide/basics/">Mock API Server Testing &amp; API Mocking Guide</a></li>
+<li><a href="https://www.soapui.org/learn/mocking/what-is-api-mocking/">API Mocking: Best Practices &amp; Tips for Getting Started</a></li>
+</ol>
                 
                   
                 
@@ -555,6 +540,41 @@ You are an up and coming musician. You are releasing a new album tomorrow and yo
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../networking/proxy/" title="Proxies" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Proxies
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../functional-programming/func-programming/" title="Core Tenets" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Core Tenets
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
