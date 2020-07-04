@@ -6,7 +6,7 @@ API mock testing is the use of a mock API server when testing code. A mock serve
 
 These best practices are from reference 2.
 
-* Make the mock 100% technically equivalent - A mock should support the same transport protocols, schemas, etc as the actual API, and be. The mock API should be accessible exactly like the original service and not require any special tooling or libraries.
+* Make the mock 100% technically equivalent - A mock should support the same transport protocols, schemas, etc as the actual API. The mock API should be accessible exactly like the original service and not require any special tooling or libraries.
 * Use recording tools or log files to create complex mock behavior - For cases when you are uncertain about messages to return, record them with a proxy or packet-sniffer and then use those recordings to create the mock behavior.
 * Use mocks to create negative tests - Simulate unexpected errors, long response times or even invalid messages to make sure your API client handles those gracefully.
 * Use mocks to enable continuous testing - of your components; by mocking out external dependencies and APIs you can run your tests as often as you want without affecting those dependencies and without being affected by any unexpected changes or irregularities within them.
