@@ -14,7 +14,9 @@ nav:
     - API: APIs/api.md
     - REST: APIs/rest.md
   - Networking:
-      - Proxies: networking/proxy.md
+    - Proxies: networking/proxy.md
+  - Testing:
+    - API Mock Testing: testing/api-mocking.md
   # - Machine Learning:
   #   - Variational Autoencoder: machine-learning/vae/Variational Autoencoder.ipynb
   - Functional Programming:
